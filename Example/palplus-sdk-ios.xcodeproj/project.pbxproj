@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		298DF8FF5A7B9C761D543C02 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4ADB0F7D3ED383991EC6FCB /* libPods-Tests.a */; };
+		00AB00DD38C6CA5D9AF161E7 /* libPods-palplus-sdk-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D160CC887735C586C00424 /* libPods-palplus-sdk-ios.a */; };
+		549692573C1E3043BDA565F6 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AC2B08968619D0C3BB3118 /* libPods-Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -23,8 +24,6 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		72EBF92A8CCA107E455A527A /* libPods-PalplusSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC30EB493642BCDCA9637EAE /* libPods-PalplusSDK.a */; };
-		A9D9E4E2D3421FAAD0E49EF2 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D32FC36EBAFF4409E5BC8B0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,21 +32,24 @@
 			containerPortal = 6003F582195388D10070C39A /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 6003F589195388D20070C39A;
-			remoteInfo = PalplusSDK;
+			remoteInfo = "palplus-sdk-ios";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		417C6252D0DC989B984D5727 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		50E5D4F5C2FF501ACF827E15 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* PalplusSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PalplusSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		21CE19019C46C76620F7660D /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		276C9403075D1B68997DE459 /* Pods-palplus-sdk-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-palplus-sdk-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-palplus-sdk-ios/Pods-palplus-sdk-ios.release.xcconfig"; sourceTree = "<group>"; };
+		3ABC963FFC1B33100F8E4CEE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		41D160CC887735C586C00424 /* libPods-palplus-sdk-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-palplus-sdk-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		521F4F52ADF5CE0EAFB718D0 /* Pods-palplus-sdk-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-palplus-sdk-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-palplus-sdk-ios/Pods-palplus-sdk-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		6003F58A195388D20070C39A /* palplus-sdk-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "palplus-sdk-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6003F595195388D20070C39A /* PalplusSDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PalplusSDK-Info.plist"; sourceTree = "<group>"; };
+		6003F595195388D20070C39A /* palplus-sdk-ios-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "palplus-sdk-ios-Info.plist"; sourceTree = "<group>"; };
 		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6003F59B195388D20070C39A /* PalplusSDK-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PalplusSDK-Prefix.pch"; sourceTree = "<group>"; };
+		6003F59B195388D20070C39A /* palplus-sdk-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "palplus-sdk-ios-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* PPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* PPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPAppDelegate.m; sourceTree = "<group>"; };
 		6003F5A0195388D20070C39A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -61,18 +63,10 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
-		8D32FC36EBAFF4409E5BC8B0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A4ADB0F7D3ED383991EC6FCB /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADC6F6A64A081E8778A0FF8B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		B96B7733814567571A09560D /* PPForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPForum.h; path = ../Pod/Classes/PPForum.h; sourceTree = "<group>"; };
-		B96B775374F5ED258C79ECC9 /* PPForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPForum.m; path = ../Pod/Classes/PPForum.m; sourceTree = "<group>"; };
-		B96B784009813A4B532DDB6C /* PPSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPSdk.m; path = ../Pod/Classes/PPSdk.m; sourceTree = "<group>"; };
-		B96B7BA0C0CBB810D1461C92 /* PPSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPSdk.h; path = ../Pod/Classes/PPSdk.h; sourceTree = "<group>"; };
-		BC30EB493642BCDCA9637EAE /* libPods-PalplusSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PalplusSDK.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C4286AC256351578F1533971 /* Pods-PalplusSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PalplusSDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-PalplusSDK/Pods-PalplusSDK.release.xcconfig"; sourceTree = "<group>"; };
-		C80BF6E6E4AF0A3D7480E547 /* palplus-sdk-ios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.podspec; name = "palplus-sdk-ios.podspec"; path = "../palplus-sdk-ios.podspec"; sourceTree = "<group>"; };
-		CE50997AA12343BF4BB4783C /* Pods-PalplusSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PalplusSDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PalplusSDK/Pods-PalplusSDK.debug.xcconfig"; sourceTree = "<group>"; };
-		F063F35198CB0973BD35959A /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		720D7AF8B07F9A80986FF053 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7B402D59ECE2D4B9D62E4F24 /* palplus-sdk-ios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "palplus-sdk-ios.podspec"; path = "../palplus-sdk-ios.podspec"; sourceTree = "<group>"; };
+		98D816134617274B1F00A12E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B2AC2B08968619D0C3BB3118 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,8 +77,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				72EBF92A8CCA107E455A527A /* libPods-PalplusSDK.a in Frameworks */,
-				A9D9E4E2D3421FAAD0E49EF2 /* libPods.a in Frameworks */,
+				00AB00DD38C6CA5D9AF161E7 /* libPods-palplus-sdk-ios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,41 +88,29 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				298DF8FF5A7B9C761D543C02 /* libPods-Tests.a in Frameworks */,
+				549692573C1E3043BDA565F6 /* libPods-Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3788C848D7D18064B5DFA9FE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CE50997AA12343BF4BB4783C /* Pods-PalplusSDK.debug.xcconfig */,
-				C4286AC256351578F1533971 /* Pods-PalplusSDK.release.xcconfig */,
-				417C6252D0DC989B984D5727 /* Pods-Tests.debug.xcconfig */,
-				F063F35198CB0973BD35959A /* Pods-Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
-				6003F593195388D20070C39A /* PalplusSDK */,
+				6003F593195388D20070C39A /* palplus-sdk-ios */,
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
-				3788C848D7D18064B5DFA9FE /* Pods */,
-				B96B76F5216C7A73ED0C026D /* src */,
+				B21AEBBE48A3957B7594DFB7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* PalplusSDK.app */,
+				6003F58A195388D20070C39A /* palplus-sdk-ios.app */,
 				6003F5AE195388D20070C39A /* Tests.xctest */,
 			);
 			name = Products;
@@ -142,14 +123,13 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				BC30EB493642BCDCA9637EAE /* libPods-PalplusSDK.a */,
-				A4ADB0F7D3ED383991EC6FCB /* libPods-Tests.a */,
-				8D32FC36EBAFF4409E5BC8B0 /* libPods.a */,
+				B2AC2B08968619D0C3BB3118 /* libPods-Tests.a */,
+				41D160CC887735C586C00424 /* libPods-palplus-sdk-ios.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6003F593195388D20070C39A /* PalplusSDK */ = {
+		6003F593195388D20070C39A /* palplus-sdk-ios */ = {
 			isa = PBXGroup;
 			children = (
 				6003F59C195388D20070C39A /* PPAppDelegate.h */,
@@ -161,16 +141,16 @@
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
 			);
-			path = PalplusSDK;
+			path = "palplus-sdk-ios";
 			sourceTree = "<group>";
 		};
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6003F595195388D20070C39A /* PalplusSDK-Info.plist */,
+				6003F595195388D20070C39A /* palplus-sdk-ios-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
-				6003F59B195388D20070C39A /* PalplusSDK-Prefix.pch */,
+				6003F59B195388D20070C39A /* palplus-sdk-ios-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -197,55 +177,55 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				C80BF6E6E4AF0A3D7480E547 /* palplus-sdk-ios.podspec */,
-				50E5D4F5C2FF501ACF827E15 /* README.md */,
-				ADC6F6A64A081E8778A0FF8B /* LICENSE */,
+				7B402D59ECE2D4B9D62E4F24 /* palplus-sdk-ios.podspec */,
+				98D816134617274B1F00A12E /* README.md */,
+				3ABC963FFC1B33100F8E4CEE /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		B96B76F5216C7A73ED0C026D /* src */ = {
+		B21AEBBE48A3957B7594DFB7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B96B784009813A4B532DDB6C /* PPSdk.m */,
-				B96B7BA0C0CBB810D1461C92 /* PPSdk.h */,
-				B96B7733814567571A09560D /* PPForum.h */,
-				B96B775374F5ED258C79ECC9 /* PPForum.m */,
+				720D7AF8B07F9A80986FF053 /* Pods-Tests.debug.xcconfig */,
+				21CE19019C46C76620F7660D /* Pods-Tests.release.xcconfig */,
+				521F4F52ADF5CE0EAFB718D0 /* Pods-palplus-sdk-ios.debug.xcconfig */,
+				276C9403075D1B68997DE459 /* Pods-palplus-sdk-ios.release.xcconfig */,
 			);
-			name = src;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6003F589195388D20070C39A /* PalplusSDK */ = {
+		6003F589195388D20070C39A /* palplus-sdk-ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "PalplusSDK" */;
+			buildConfigurationList = 6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "palplus-sdk-ios" */;
 			buildPhases = (
-				7499AF8289474A9B31E79AAE /* Check Pods Manifest.lock */,
+				94E54CCC2C993BFE51A337AF /* Check Pods Manifest.lock */,
 				6003F586195388D20070C39A /* Sources */,
 				6003F587195388D20070C39A /* Frameworks */,
 				6003F588195388D20070C39A /* Resources */,
-				41C645861A13ED6F7F015232 /* Copy Pods Resources */,
+				CEE03E8D8F0FE573C36C1D41 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PalplusSDK;
-			productName = PalplusSDK;
-			productReference = 6003F58A195388D20070C39A /* PalplusSDK.app */;
+			name = "palplus-sdk-ios";
+			productName = "palplus-sdk-ios";
+			productReference = 6003F58A195388D20070C39A /* palplus-sdk-ios.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6003F5C2195388D20070C39A /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
-				876BDB260089683999D78BAA /* Check Pods Manifest.lock */,
+				173809FBD7DB1D76DBA710B1 /* Check Pods Manifest.lock */,
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				FA79D35D84BDE2F792B374C4 /* Copy Pods Resources */,
+				F70A9F914F6E350A463E92B8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,7 +233,7 @@
 				6003F5B4195388D20070C39A /* PBXTargetDependency */,
 			);
 			name = Tests;
-			productName = PalplusSDKTests;
+			productName = "palplus-sdk-iosTests";
 			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -272,7 +252,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "PalplusSDK" */;
+			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "palplus-sdk-ios" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -285,7 +265,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6003F589195388D20070C39A /* PalplusSDK */,
+				6003F589195388D20070C39A /* palplus-sdk-ios */,
 				6003F5AD195388D20070C39A /* Tests */,
 			);
 		};
@@ -314,7 +294,37 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		41C645861A13ED6F7F015232 /* Copy Pods Resources */ = {
+		173809FBD7DB1D76DBA710B1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		94E54CCC2C993BFE51A337AF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CEE03E8D8F0FE573C36C1D41 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -326,40 +336,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PalplusSDK/Pods-PalplusSDK-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-palplus-sdk-ios/Pods-palplus-sdk-ios-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7499AF8289474A9B31E79AAE /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		876BDB260089683999D78BAA /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		FA79D35D84BDE2F792B374C4 /* Copy Pods Resources */ = {
+		F70A9F914F6E350A463E92B8 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -400,7 +380,7 @@
 /* Begin PBXTargetDependency section */
 		6003F5B4195388D20070C39A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6003F589195388D20070C39A /* PalplusSDK */;
+			target = 6003F589195388D20070C39A /* palplus-sdk-ios */;
 			targetProxy = 6003F5B3195388D20070C39A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -515,13 +495,13 @@
 		};
 		6003F5C0195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE50997AA12343BF4BB4783C /* Pods-PalplusSDK.debug.xcconfig */;
+			baseConfigurationReference = 521F4F52ADF5CE0EAFB718D0 /* Pods-palplus-sdk-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PalplusSDK/PalplusSDK-Prefix.pch";
-				INFOPLIST_FILE = "PalplusSDK/PalplusSDK-Info.plist";
+				GCC_PREFIX_HEADER = "palplus-sdk-ios/palplus-sdk-ios-Prefix.pch";
+				INFOPLIST_FILE = "palplus-sdk-ios/palplus-sdk-ios-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -529,13 +509,13 @@
 		};
 		6003F5C1195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4286AC256351578F1533971 /* Pods-PalplusSDK.release.xcconfig */;
+			baseConfigurationReference = 276C9403075D1B68997DE459 /* Pods-palplus-sdk-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PalplusSDK/PalplusSDK-Prefix.pch";
-				INFOPLIST_FILE = "PalplusSDK/PalplusSDK-Info.plist";
+				GCC_PREFIX_HEADER = "palplus-sdk-ios/palplus-sdk-ios-Prefix.pch";
+				INFOPLIST_FILE = "palplus-sdk-ios/palplus-sdk-ios-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -543,9 +523,9 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 417C6252D0DC989B984D5727 /* Pods-Tests.debug.xcconfig */;
+			baseConfigurationReference = 720D7AF8B07F9A80986FF053 /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PalplusSDK.app/PalplusSDK";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/palplus-sdk-ios.app/palplus-sdk-ios";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -566,9 +546,9 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F063F35198CB0973BD35959A /* Pods-Tests.release.xcconfig */;
+			baseConfigurationReference = 21CE19019C46C76620F7660D /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PalplusSDK.app/PalplusSDK";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/palplus-sdk-ios.app/palplus-sdk-ios";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -586,7 +566,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6003F585195388D10070C39A /* Build configuration list for PBXProject "PalplusSDK" */ = {
+		6003F585195388D10070C39A /* Build configuration list for PBXProject "palplus-sdk-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5BD195388D20070C39A /* Debug */,
@@ -595,7 +575,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "PalplusSDK" */ = {
+		6003F5BF195388D20070C39A /* Build configuration list for PBXNativeTarget "palplus-sdk-ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6003F5C0195388D20070C39A /* Debug */,

@@ -1,8 +1,8 @@
 //
-//  PalplusSDKTests.m
-//  PalplusSDKTests
+//  palplus-sdk-iosTests.m
+//  palplus-sdk-iosTests
 //
-//  Created by Ingram Chen on 05/12/2015.
+//  Created by Ingram Chen on 05/14/2015.
 //  Copyright (c) 2014 Ingram Chen. All rights reserved.
 //
 

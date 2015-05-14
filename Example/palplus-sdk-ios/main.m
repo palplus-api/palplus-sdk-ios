@@ -1,8 +1,8 @@
 //
 //  main.m
-//  PalplusSDK
+//  palplus-sdk-ios
 //
-//  Created by Ingram Chen on 05/12/2015.
+//  Created by Ingram Chen on 05/14/2015.
 //  Copyright (c) 2014 Ingram Chen. All rights reserved.
 //
 
