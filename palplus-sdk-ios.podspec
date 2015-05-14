@@ -10,15 +10,11 @@
 Pod::Spec.new do |s|
   s.name             = "palplus-sdk-ios"
   s.version          = "0.1.0"
-  s.summary          = "TODO A short description of PalplusSDK."
+  s.summary          = "Pal+ iOS SDK"
   s.description      = <<-DESC
-                       TODO An optional longer description of PalplusSDK
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
+                       Pal+ iOS SDK enables 3rd party apps to browse a board and post an article to Pal+
                        DESC
   s.homepage         = "https://github.com/palplus-api/palplus-sdk-ios"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'Apache 2'
   s.author           = { "palplus-api" => "support@palplus.me" }
   s.source           = { :git => "https://github.com/palplus-api/palplus-sdk-ios.git", :tag => s.version.to_s }
@@ -33,5 +29,7 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # s.dependency 'JSONKit', '~> 1.4'
+
+  s.prepare_command = "sed -i '' 's/__VERSION__/" + s.version.to_s + "/g' Pod/Classes/PPConstants.h"
 end

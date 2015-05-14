@@ -5,6 +5,8 @@
 
 #import "PPSdk.h"
 #import "PPForum.h"
+#import "PPTracker.h"
+#import "PPPref.h"
 
 @implementation PPSdk
 
@@ -16,6 +18,16 @@
     }
   }
   return forum;
+}
+
++ (void) setup {
+  if ([[PPPref sharedInstance] isStopQueue]) {
+    return;
+  }
+  dispatch_queue_t queue = dispatch_queue_create("me.palplus.sdk", DISPATCH_QUEUE_SERIAL);
+  dispatch_async(queue, ^{ // 1
+    [[[PPTracker alloc] init] start];
+  });
 }
 
 @end

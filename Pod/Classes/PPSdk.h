@@ -9,7 +9,7 @@
 
 @interface PPSdk : NSObject
 
-@property (nonatomic, readonly, strong) PPForum* forum;
-
 +(PPForum* ) forum;
+
++ (void) setup;
 @end

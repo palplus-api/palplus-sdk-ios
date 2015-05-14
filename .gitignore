@@ -31,3 +31,4 @@ DerivedData
 #
 # Pods/
 .idea/
+*.swp

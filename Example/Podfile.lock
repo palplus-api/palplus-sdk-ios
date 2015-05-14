@@ -2,18 +2,13 @@ PODS:
   - palplus-sdk-ios (0.1.0)
 
 DEPENDENCIES:
-  - palplus-sdk-ios (from `https://github.com/palplus-api/palplus-sdk-ios.git`)
+  - palplus-sdk-ios (from `../`)
 
 EXTERNAL SOURCES:
   palplus-sdk-ios:
-    :git: https://github.com/palplus-api/palplus-sdk-ios.git
-
-CHECKOUT OPTIONS:
-  palplus-sdk-ios:
-    :commit: 559b0650d38e9b52955998c0cd1362f60e8ed405
-    :git: https://github.com/palplus-api/palplus-sdk-ios.git
+    :path: ../
 
 SPEC CHECKSUMS:
-  palplus-sdk-ios: e119cc7b2462f797eaba8bd5370ae4d0f5f26a3d
+  palplus-sdk-ios: 95f18df489d8fb778cff9eadf036e4cdf9dc5d19
 
 COCOAPODS: 0.36.4
