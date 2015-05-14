@@ -1,0 +1,14 @@
+PODS:
+  - palplus-sdk-ios (0.1.0)
+
+DEPENDENCIES:
+  - palplus-sdk-ios (from `../`)
+
+EXTERNAL SOURCES:
+  palplus-sdk-ios:
+    :path: ../
+
+SPEC CHECKSUMS:
+  palplus-sdk-ios: e119cc7b2462f797eaba8bd5370ae4d0f5f26a3d
+
+COCOAPODS: 0.36.4
