@@ -3,12 +3,12 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod "AFNetworking", "~> 2.0"
 
 target 'palplus-sdk-ios', :exclusive => true do
-  pod "palplus-sdk-ios", :git => "https://github.com/palplus-api/palplus-sdk-ios.git"
-  ## pod "palplus-sdk-ios", :path => "../"
+   pod "palplus-sdk-ios", :git => "https://github.com/palplus-api/palplus-sdk-ios.git", :tag => '0.1.1'
+  #pod "palplus-sdk-ios", :path => "../"
 end
 
 target 'Tests', :exclusive => true do
-  pod "palplus-sdk-ios", :git => "https://github.com/palplus-api/palplus-sdk-ios.git"
-  ## pod "palplus-sdk-ios", :path => "../"
+  pod "palplus-sdk-ios", :git => "https://github.com/palplus-api/palplus-sdk-ios.git", :tag => '0.1.1'
+  #pod "palplus-sdk-ios", :path => "../"
 end
 
