@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00AB00DD38C6CA5D9AF161E7 /* libPods-palplus-sdk-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41D160CC887735C586C00424 /* libPods-palplus-sdk-ios.a */; };
+		030213B532A56584ADC5A3E7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6283029D3161FAAE6D5EB06E /* libPods.a */; };
 		549692573C1E3043BDA565F6 /* libPods-Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2AC2B08968619D0C3BB3118 /* libPods-Tests.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -15,8 +16,6 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* PPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* PPAppDelegate.m */; };
-		6003F5A1195388D20070C39A /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6003F59F195388D20070C39A /* Main_iPhone.storyboard */; };
-		6003F5A4195388D20070C39A /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A2195388D20070C39A /* Main_iPad.storyboard */; };
 		6003F5A7195388D20070C39A /* PPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* PPViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
@@ -24,6 +23,10 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		B96B72082612A8B6D8DED6ED /* Views.m in Sources */ = {isa = PBXBuildFile; fileRef = B96B73AC60BD37113896B3A7 /* Views.m */; };
+		B96B7A1FD2F91785EC7C49F5 /* SelectFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96B7FEA43ED640E96ACB88E /* SelectFriendViewController.m */; };
+		B96B7DA6B99EAD2C43182E0A /* MessengerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96B7B348659C65CD73F54EE /* MessengerViewController.m */; };
+		B96B7FDE06A41CE1DD4B2E0A /* SendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B96B71F044E27B869899D165 /* SendMessageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +41,10 @@
 
 /* Begin PBXFileReference section */
 		21CE19019C46C76620F7660D /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		21EE22F21B0DBB1100C95246 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		21EE22F31B0DBB1100C95246 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		276C9403075D1B68997DE459 /* Pods-palplus-sdk-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-palplus-sdk-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-palplus-sdk-ios/Pods-palplus-sdk-ios.release.xcconfig"; sourceTree = "<group>"; };
+		2E8841ACE42A774E1C4AB155 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3ABC963FFC1B33100F8E4CEE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		41D160CC887735C586C00424 /* libPods-palplus-sdk-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-palplus-sdk-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		521F4F52ADF5CE0EAFB718D0 /* Pods-palplus-sdk-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-palplus-sdk-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-palplus-sdk-ios/Pods-palplus-sdk-ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -52,8 +58,6 @@
 		6003F59B195388D20070C39A /* palplus-sdk-ios-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "palplus-sdk-ios-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* PPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* PPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A0195388D20070C39A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		6003F5A3195388D20070C39A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		6003F5A5195388D20070C39A /* PPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* PPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -63,10 +67,20 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		6283029D3161FAAE6D5EB06E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		720D7AF8B07F9A80986FF053 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B402D59ECE2D4B9D62E4F24 /* palplus-sdk-ios.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "palplus-sdk-ios.podspec"; path = "../palplus-sdk-ios.podspec"; sourceTree = "<group>"; };
+		85746B0675A204A7D00D3EA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		98D816134617274B1F00A12E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B2AC2B08968619D0C3BB3118 /* libPods-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B96B70F1CC2179259480826F /* SendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessageViewController.h; sourceTree = "<group>"; };
+		B96B71F044E27B869899D165 /* SendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageViewController.m; sourceTree = "<group>"; };
+		B96B7265D7003E0E59BE3F29 /* MessengerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessengerViewController.h; sourceTree = "<group>"; };
+		B96B73AC60BD37113896B3A7 /* Views.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Views.m; sourceTree = "<group>"; };
+		B96B7B348659C65CD73F54EE /* MessengerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessengerViewController.m; sourceTree = "<group>"; };
+		B96B7BEBA1B157F35BBAE27B /* SelectFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectFriendViewController.h; sourceTree = "<group>"; };
+		B96B7F1CE0CB8220542A3880 /* Views.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Views.h; sourceTree = "<group>"; };
+		B96B7FEA43ED640E96ACB88E /* SelectFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectFriendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +92,7 @@
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 				00AB00DD38C6CA5D9AF161E7 /* libPods-palplus-sdk-ios.a in Frameworks */,
+				030213B532A56584ADC5A3E7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +140,7 @@
 				6003F5AF195388D20070C39A /* XCTest.framework */,
 				B2AC2B08968619D0C3BB3118 /* libPods-Tests.a */,
 				41D160CC887735C586C00424 /* libPods-palplus-sdk-ios.a */,
+				6283029D3161FAAE6D5EB06E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,12 +150,18 @@
 			children = (
 				6003F59C195388D20070C39A /* PPAppDelegate.h */,
 				6003F59D195388D20070C39A /* PPAppDelegate.m */,
-				6003F59F195388D20070C39A /* Main_iPhone.storyboard */,
-				6003F5A2195388D20070C39A /* Main_iPad.storyboard */,
 				6003F5A5195388D20070C39A /* PPViewController.h */,
 				6003F5A6195388D20070C39A /* PPViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				B96B7B348659C65CD73F54EE /* MessengerViewController.m */,
+				B96B7BEBA1B157F35BBAE27B /* SelectFriendViewController.h */,
+				B96B70F1CC2179259480826F /* SendMessageViewController.h */,
+				B96B7F1CE0CB8220542A3880 /* Views.h */,
+				B96B7265D7003E0E59BE3F29 /* MessengerViewController.h */,
+				B96B71F044E27B869899D165 /* SendMessageViewController.m */,
+				B96B7FEA43ED640E96ACB88E /* SelectFriendViewController.m */,
+				B96B73AC60BD37113896B3A7 /* Views.m */,
 			);
 			path = "palplus-sdk-ios";
 			sourceTree = "<group>";
@@ -191,6 +213,8 @@
 				21CE19019C46C76620F7660D /* Pods-Tests.release.xcconfig */,
 				521F4F52ADF5CE0EAFB718D0 /* Pods-palplus-sdk-ios.debug.xcconfig */,
 				276C9403075D1B68997DE459 /* Pods-palplus-sdk-ios.release.xcconfig */,
+				85746B0675A204A7D00D3EA4 /* Pods.debug.xcconfig */,
+				2E8841ACE42A774E1C4AB155 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -259,6 +283,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 6003F581195388D10070C39A;
 			productRefGroup = 6003F58B195388D20070C39A /* Products */;
@@ -276,9 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5A4195388D20070C39A /* Main_iPad.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
-				6003F5A1195388D20070C39A /* Main_iPhone.storyboard in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,6 +387,10 @@
 				6003F59E195388D20070C39A /* PPAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* PPViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				B96B7DA6B99EAD2C43182E0A /* MessengerViewController.m in Sources */,
+				B96B7FDE06A41CE1DD4B2E0A /* SendMessageViewController.m in Sources */,
+				B96B7A1FD2F91785EC7C49F5 /* SelectFriendViewController.m in Sources */,
+				B96B72082612A8B6D8DED6ED /* Views.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,30 +417,16 @@
 			isa = PBXVariantGroup;
 			children = (
 				6003F597195388D20070C39A /* en */,
+				21EE22F21B0DBB1100C95246 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6003F59F195388D20070C39A /* Main_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6003F5A0195388D20070C39A /* Base */,
-			);
-			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		6003F5A2195388D20070C39A /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6003F5A3195388D20070C39A /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		6003F5B8195388D20070C39A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6003F5B9195388D20070C39A /* en */,
+				21EE22F31B0DBB1100C95246 /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -423,6 +436,7 @@
 /* Begin XCBuildConfiguration section */
 		6003F5BD195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85746B0675A204A7D00D3EA4 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -462,6 +476,7 @@
 		};
 		6003F5BE195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E8841ACE42A774E1C4AB155 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

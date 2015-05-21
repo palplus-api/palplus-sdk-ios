@@ -24,12 +24,11 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'palplus-sdk-ios' => ['Pod/Assets/*.png']
+    'palplus-sdk-ios' => ['Pod/Assets/**/*']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'JSONKit', '~> 1.4'
 
   s.prepare_command = "sed -i '' 's/__VERSION__/" + s.version.to_s + "/g' Pod/Classes/PPConstants.h"
 end

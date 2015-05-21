@@ -7,8 +7,9 @@
 //
 
 #import "PPViewController.h"
-#import "PPSdk.h"
-#import "PPForum.h"
+#import "PALSdk.h"
+#import "PALForum.h"
+#import "MessengerViewController.h"
 
 static NSString* const BOARD_ID = @"cd1ec670-ab5a-11e4-9e3a-25191cafc7c9";
 
@@ -29,74 +30,83 @@ static NSString* const BOARD_ID = @"cd1ec670-ab5a-11e4-9e3a-25191cafc7c9";
 
 - (void) viewDidLoad {
   [super viewDidLoad];
-  UIButton* goToBoardButton = [self createButton:@"Go to board" y:100];
+  UIButton* messengerButton = [self createButton:@"Messenger" y:100];
+  [messengerButton addTarget:self action:@selector(onMessenger) forControlEvents:UIControlEventTouchUpInside];
+  [self.view addSubview:messengerButton];
+
+  UIButton* goToBoardButton = [self createButton:@"Go to board" y:150];
   [goToBoardButton addTarget:self action:@selector(onOpenBoard) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:goToBoardButton];
 
-  UIButton* createArticleButton = [self createButton:@"Create article" y:150];
+  UIButton* createArticleButton = [self createButton:@"Create article" y:200];
   [createArticleButton addTarget:self action:@selector(onCreateArticle) forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:createArticleButton];
 
-  UIButton* createArticleWithTextButton = [self createButton:@"Create article with text" y:200];
+  UIButton* createArticleWithTextButton = [self createButton:@"Create article with text" y:250];
   [createArticleWithTextButton addTarget:self
                                   action:@selector(onCreateArticleWithText)
                         forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:createArticleWithTextButton];
 
-  UIButton* createArticleWithImageButton = [self createButton:@"Create article with image" y:250];
+  UIButton* createArticleWithImageButton = [self createButton:@"Create article with image" y:300];
   [createArticleWithImageButton addTarget:self
                                    action:@selector(onCreateArticleWithImage)
                          forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:createArticleWithImageButton];
 
-  UIButton* createArticleWithTextAndImageButton = [self createButton:@"Create article with text and image" y:300];
+  UIButton* createArticleWithTextAndImageButton = [self createButton:@"Create article with text and image" y:350];
   [createArticleWithTextAndImageButton addTarget:self
                                           action:@selector(onCreateArticleWithTextAndImage)
                                 forControlEvents:UIControlEventTouchUpInside];
   [self.view addSubview:createArticleWithTextAndImageButton];
 }
 
+- (void) onMessenger {
+  MessengerViewController* controller = [[MessengerViewController alloc] initMessenger];
+  [self.navigationController pushViewController:controller animated:YES];
+}
+
 - (void) onOpenBoard {
-  if ([[PPSdk forum] canOpenBoard:BOARD_ID]) {
-    [[PPSdk forum] openBoard:BOARD_ID];
+  if ([[PALSdk forum] canOpenBoard:BOARD_ID]) {
+    [[PALSdk forum] openBoard:BOARD_ID];
   } else {
     NSLog(@"please install pal+ first");
   }
 }
 
 - (void) onCreateArticle {
-  if ([[PPSdk forum] canCreateArticle:BOARD_ID]) {
-    [[PPSdk forum] createArticle:BOARD_ID withTitle:nil withImage:nil];
+  if ([[PALSdk forum] canCreateArticle:BOARD_ID]) {
+    [[PALSdk forum] createArticle:BOARD_ID withTitle:nil withImage:nil];
   } else {
     NSLog(@"please install pal+ first");
   }
 }
 
 - (void) onCreateArticleWithText {
-  if ([[PPSdk forum] canCreateArticle:BOARD_ID]) {
-    [[PPSdk forum] createArticle:BOARD_ID withTitle:@"hello" withImage:nil];
+  if ([[PALSdk forum] canCreateArticle:BOARD_ID]) {
+    [[PALSdk forum] createArticle:BOARD_ID withTitle:@"hello" withImage:nil];
   } else {
     NSLog(@"please install pal+ first");
   }
 }
 
 - (void) onCreateArticleWithImage {
-  if ([[PPSdk forum] canCreateArticle:BOARD_ID]) {
-    [[PPSdk forum] createArticle:BOARD_ID withTitle:nil withImage:[self createTestImage:@"screenshot"]];
+  if ([[PALSdk forum] canCreateArticle:BOARD_ID]) {
+    [[PALSdk forum] createArticle:BOARD_ID withTitle:nil withImage:[self createTestImage:@"screenshot"]];
   } else {
     NSLog(@"please install pal+ first");
   }
 }
 
 - (void) onCreateArticleWithTextAndImage {
-  if ([[PPSdk forum] canCreateArticle:BOARD_ID]) {
-    [[PPSdk forum] createArticle:BOARD_ID withTitle:@"hello" withImage:[self createTestImage:@"sample_image"]];
+  if ([[PALSdk forum] canCreateArticle:BOARD_ID]) {
+    [[PALSdk forum] createArticle:BOARD_ID withTitle:@"hello" withImage:[self createTestImage:@"sample_image"]];
   } else {
     NSLog(@"please install pal+ first");
   }
 }
 
-- (UIImage*) createTestImage:(NSString *) name {
+- (UIImage*) createTestImage:(NSString*) name {
   return [UIImage imageNamed:name];
 }
 
