@@ -42,10 +42,10 @@
 }
 
 - (void) setStopQueue {
-  [self.userDefaults setBool:YES forKey:[NSString stringWithFormat:@"PP_stopQueue_%@", PP_SDK_VERSION]];
+  [self.userDefaults setBool:YES forKey:[NSString stringWithFormat:@"PP_stopQueue_%@", PAL_SDK_VERSION]];
 }
 
 - (BOOL) isStopQueue {
-  return [self.userDefaults boolForKey:[NSString stringWithFormat:@"PP_stopQueue_%@", PP_SDK_VERSION]];
+  return [self.userDefaults boolForKey:[NSString stringWithFormat:@"PP_stopQueue_%@", PAL_SDK_VERSION]];
 }
 @end

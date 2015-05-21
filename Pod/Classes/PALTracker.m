@@ -58,7 +58,7 @@ static NSString* const ENDPOINT = @"https://trackingapi.palplus.me";
   NSMutableDictionary* props = [NSMutableDictionary dictionary];
   [props addEntriesFromDictionary:[self collectAutomaticProperties]];
   props[@"app_id"] = [[NSBundle mainBundle] infoDictionary][@"CFBundleIdentifier"];
-  props[@"sdk_version"] = PP_SDK_VERSION;
+  props[@"sdk_version"] = PAL_SDK_VERSION;
   return props;
 }
 
