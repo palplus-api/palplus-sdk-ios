@@ -1,2 +1,4 @@
-* run ./release.sh x.y.z then commit/push to github
+* run ./release.sh x.y.z 
+* commit/push to github
+* tag/push to github
 

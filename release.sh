@@ -26,6 +26,8 @@ echo
 
 
 echo "-------- run below command if ok-----"
+echo "git commit -a -m \"release $VERSION\""
+echo "git push"
 echo "git tag $VERSION"
 echo "git push --tags"
 
