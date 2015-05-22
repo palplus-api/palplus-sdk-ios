@@ -1,5 +1,7 @@
 #import "PALMessage.h"
-
+#import "PALFriendsResult.h"
+#import "PALUser.h"
+#import "PALMessengerDelegate.h"
 
 @implementation PALMessage
 

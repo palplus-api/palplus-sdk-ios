@@ -3,6 +3,7 @@
 //
 
 #import "PALHttpClient.h"
+#import "PALMessengerAccessDeniedError.h"
 
 NSTimeInterval PALHttpClientRequestTimeoutInterval = 10;
 
@@ -57,6 +58,12 @@ NSTimeInterval PALHttpClientRequestTimeoutInterval = 10;
     NSHTTPURLResponse* response;
     NSError* error;
     NSData* responseBody = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    // -1012 is status 401
+    if (error.code == NSURLErrorUserCancelledAuthentication) {
+      NSLog(@"PALHttpClient post access denied %@", error);
+      error = [[PALMessengerAccessDeniedError alloc] initError];
+      responseBody = nil;
+    }
     if (error) {
       NSLog(@"PALHttpClient post error %@", error);
       responseBody = nil;
@@ -85,6 +92,11 @@ NSTimeInterval PALHttpClientRequestTimeoutInterval = 10;
     NSHTTPURLResponse* response;
     NSError* error;
     NSData* responseBody = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+    if (error.code == NSURLErrorUserCancelledAuthentication) {
+      NSLog(@"PALHttpClient get access denied %@", error);
+      error = [[PALMessengerAccessDeniedError alloc] initError];
+      responseBody = nil;
+    }
     if (error) {
       NSLog(@"PALHttpClient get error %@", error);
       responseBody = nil;

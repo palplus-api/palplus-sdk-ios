@@ -7,9 +7,9 @@
 #import "PALForum.h"
 #import "PALTracker.h"
 #import "PALPref.h"
-#import "PALMessenger.h"
+#import "PALMessengerImpl.h"
 
-static PALMessenger* messenger = nil;
+static PALMessengerImpl* messenger = nil;
 
 @implementation PALSdk
 
@@ -23,7 +23,7 @@ static PALMessenger* messenger = nil;
   return forum;
 }
 
-+ (PALMessenger*) messenger {
++ (id<PALMessenger>) messenger {
   if (!messenger) {
     [[[UIAlertView alloc]
         initWithTitle:@"WARNING"
@@ -40,7 +40,7 @@ static PALMessenger* messenger = nil;
   if (appKey) {
     @synchronized ([PALSdk class]) {
       if (!messenger) {
-        messenger = [[PALMessenger alloc] initWithAppKey:appKey];
+        messenger = [[PALMessengerImpl alloc] initWithAppKey:appKey];
       }
     }
   }

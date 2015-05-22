@@ -4,15 +4,17 @@
 
 #import <Foundation/Foundation.h>
 
-@class PALMessenger;
+@protocol PALMessenger;
 
 @protocol PALMessengerDelegate<NSObject>
 @optional
 
-- (void) pal_messengerDidConnect:(PALMessenger*) messenger;
+- (void) pal_messengerDidConnect:(id<PALMessenger>) messenger;
 
-- (void) pal_messengerDidDisconnect:(PALMessenger*) messenger;
+- (void) pal_messengerDidDisconnect:(id<PALMessenger>) messenger;
 
-- (void) pal_messenger:(PALMessenger*) messenger didOpenWithExecuteParams:(NSString*) params;
+- (void) pal_messengerConnectionInvalidated:(id<PALMessenger>) messenger;
+
+- (void) pal_messenger:(id<PALMessenger>) messenger didOpenWithExecuteParams:(NSString*) params;
 
 @end

@@ -7,9 +7,7 @@
 
 typedef void (^SessionCallback)(PALMessengerHelper* session);
 
-+ (PALMessengerHelper*) getSession;
-
-+ (void) init:(SessionCallback) callback;
++ (PALMessengerHelper*) sharedInstance;
 
 - (void) open:(SessionCallback) callback;
 

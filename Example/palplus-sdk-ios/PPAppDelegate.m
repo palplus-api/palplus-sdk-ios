@@ -18,7 +18,11 @@
 
 @implementation PPAppDelegate
 
-- (void) pal_messenger:(PALMessenger*) messenger didOpenWithExecuteParams:(NSString*) params {
+- (void) pal_messengerConnectionInvalidated:(id<PALMessenger>) messenger {
+  NSLog(@"messenger connection invalidated, You should redirect user to connect Pal+ again");
+}
+
+- (void) pal_messenger:(id<PALMessenger>) messenger didOpenWithExecuteParams:(NSString*) params {
   [[[UIAlertView alloc]
       initWithTitle:@"Detected"
             message:[NSString stringWithFormat:@"Execute Parameters from Pal+: %@", params]

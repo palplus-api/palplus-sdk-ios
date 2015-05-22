@@ -9,7 +9,6 @@
 #import "SelectFriendViewController.h"
 #import "PALFriend.h"
 #import "PALMessage.h"
-#import "UIViewController+PAL.h"
 #import "PALMessengerHelper.h"
 
 enum {
@@ -92,11 +91,7 @@ enum {
   [self.navigationItem setHidesBackButton:YES animated:NO];
   [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]
       initWithTitle:@"Setting" style:UIBarButtonItemStylePlain target:self action:@selector(onSetting)]];
-}
-
-- (void) viewDidAppear:(BOOL) animated {
-  [super viewDidAppear:animated];
-  [self pal_didSessionChangedWithOpenSelector:@selector(loadProfile) withCloseSelector:@selector(goBackToMain)];
+  [self loadProfile];
 }
 
 - (NSInteger) numberOfSectionsInTableView:(UITableView*) tableView {
@@ -222,15 +217,18 @@ enum {
   NSLog(@"SendMessageViewController actionSheet:%@", button);
   // right
   if ([button isEqualToString:@"Logout"]) {
-    [self pal_disconnectWithCloseSelector:@selector(goBackToMain)];
+    __weak SendMessageViewController* preventCircularRef = self;
+    [[PALSdk messenger] disconnect:^(BOOL success) {
+      [preventCircularRef goBackToMain];
+    }];
   } else if ([button isEqualToString:@"Show Access Token"]) {
     NSLog(@"SendMessageViewController accessToken:%@ expire:%@",
-        [[PALMessengerHelper getSession] getAccessToken],
-        [NSDate dateWithTimeIntervalSince1970:[[PALMessengerHelper getSession] getExpireTime] / 1000]);
+        [[PALMessengerHelper sharedInstance] getAccessToken],
+        [NSDate dateWithTimeIntervalSince1970:[[PALMessengerHelper sharedInstance] getExpireTime] / 1000]);
   } else if ([button isEqualToString:@"1 Hour Access Token"]) {
-    [[PALMessengerHelper getSession] testMakeAccessTokenNeedToRefresh];
+    [[PALMessengerHelper sharedInstance] testMakeAccessTokenNeedToRefresh];
   } else if ([button isEqualToString:@"Invalidate Access Token"]) {
-    [[PALMessengerHelper getSession] testInvalidAccessToken];
+    [[PALMessengerHelper sharedInstance] testInvalidAccessToken];
   }
 }
 
@@ -309,10 +307,10 @@ destructiveButtonTitle:@"Logout"
     UITextField* inputButtonText = self.textFields[INPUT_BUTTON_TEXT];
     UITextField* inputButtonExec = self.textFields[INPUT_BUTTON_EXEC];
     UITextField* inputButtonMarket = self.textFields[INPUT_BUTTON_MARKET];
-    [builder appButton:inputButtonText.text
-                action:[[[PALMessageActionParams params]
-                    executeParam:inputButtonExec.text]
-                    marketParam:inputButtonMarket.text]];
+    PALMessageActionParams* buttonAction = [[[PALMessageActionParams params]
+        executeParam:inputButtonExec.text]
+        marketParam:inputButtonMarket.text];
+    [builder appButton:inputButtonText.text action:buttonAction];
   }
   if ([self.checked[INPUT_LINK_TEXT] boolValue]) {
     UITextField* inputLinkText = self.textFields[INPUT_LINK_TEXT];

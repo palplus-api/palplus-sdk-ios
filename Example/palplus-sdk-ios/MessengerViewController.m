@@ -1,7 +1,9 @@
 #import "MessengerViewController.h"
+
 #import "SendMessageViewController.h"
-#import "UIViewController+PAL.h"
 #import "PALUtils.h"
+#import "PALSdk.h"
+#import "PALMessenger.h"
 
 @implementation MessengerViewController
 
@@ -22,20 +24,24 @@
   [connectButton addTarget:self action:@selector(openPalPlus) forControlEvents:UIControlEventTouchUpInside];
   connectButton.center = self.view.center;
   [self.view addSubview:connectButton];
+
+  if ([[PALSdk messenger] isConnected]) {
+    [self gotoSendMessageView];
+  }
 }
 
-- (void) viewDidAppear:(BOOL) animated {
-  [super viewDidAppear:animated];
-  [self pal_didSessionChangedWithOpenSelector:@selector(gotoSendMessageView) withCloseSelector:nil];
+- (void) openPalPlus {
+  __weak MessengerViewController* preventCirculerRef = self;
+  [[PALSdk messenger] connect:^(BOOL success) {
+    if (success) {
+      [preventCirculerRef gotoSendMessageView];
+    }
+  }];
 }
 
 - (void) gotoSendMessageView {
   SendMessageViewController* sendMessageViewController = [[SendMessageViewController alloc] initSendMessage];
   [self.navigationController pushViewController:sendMessageViewController animated:YES];
-}
-
-- (void) openPalPlus {
-  [self pal_connectWithOpenSelector:@selector(gotoSendMessageView)];
 }
 
 @end

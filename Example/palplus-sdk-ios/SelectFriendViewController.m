@@ -1,11 +1,10 @@
 #import "PALSdk.h"
 #import "SelectFriendViewController.h"
 #import "PALFriendsResult.h"
-#import "PALMessenger.h"
 #import "PALFriend.h"
+#import "PALMessenger.h"
 #import "UIImageView+AFNetworking.h"
 #import "Views.h"
-#import "UIViewController+PAL.h"
 
 enum {
   SECTION_FRIENDS,
@@ -38,11 +37,7 @@ enum {
   [self.loading sizeToFit];
   [Views alignCenterMiddle:self.loading containerFrame:self.view.frame];
   [self.view addSubview:self.loading];
-}
-
-- (void) viewDidAppear:(BOOL) animated {
-  [super viewDidAppear:animated];
-  [self pal_didSessionChangedWithOpenSelector:@selector(loadFriends) withCloseSelector:@selector(goBackToMain)];
+  [self loadFriends];
 }
 
 - (void) goBackToMain {
@@ -143,7 +138,7 @@ enum {
   __weak SelectFriendViewController* preventCircularRef = self;
   [[PALSdk messenger]
       requestFriends:self.friendList
-            pageSize:PALDefaultFriendListPageSize
+            pageSize:25
                 done:^(PALFriendsResult* updatedFriendList, NSError* error) {
                   [preventCircularRef.loading stopAnimating];
                   if (error) {

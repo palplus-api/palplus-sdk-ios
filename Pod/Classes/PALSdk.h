@@ -6,13 +6,13 @@
 #import <Foundation/Foundation.h>
 
 @class PALForum;
-@class PALMessenger;
+@protocol PALMessenger;
 
 @interface PALSdk : NSObject
 
 + (PALForum*) forum;
 
-+ (PALMessenger*) messenger;
++ (id<PALMessenger>) messenger;
 
 + (void) setup:(NSString*) appKey;
 

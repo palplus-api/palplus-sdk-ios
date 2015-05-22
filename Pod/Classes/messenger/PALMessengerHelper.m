@@ -2,14 +2,14 @@
 #import "PALMessengerHelper.h"
 #import "PALAccessToken.h"
 #import "PALMessengerPref.h"
-#import "PALMessenger.h"
+#import "PALMessengerImpl.h"
 #import "PALUserAccessToken.h"
 #import "PALUtils.h"
 #import "PALConstants.h"
 
 static const long long MIN_REFRESH_INTERVAL = 30LL * 24 * 60 * 60 * 1000; // 30 days
 
-static PALMessengerHelper* currentSession = nil;
+
 
 @interface PALMessengerHelper()<UIAlertViewDelegate>
 @property (nonatomic, strong) PALAccessToken* accessToken;
@@ -19,8 +19,20 @@ static PALMessengerHelper* currentSession = nil;
 
 @implementation PALMessengerHelper
 
-+ (PALMessengerHelper*) getSession {
-  return currentSession;
++ (PALMessengerHelper*) sharedInstance {
+  static PALMessengerHelper* _instance = nil;
+  @synchronized (self) {
+    if (_instance == nil) {
+      _instance = [[self alloc] initSession];
+      if (!_instance) {
+        NSLog(@"PALMessengerHelper init");
+        _instance = [[PALMessengerHelper alloc] initSession];
+      }
+      [_instance reopen];
+    }
+  }
+
+  return _instance;
 }
 
 - (instancetype) initSession {
@@ -34,15 +46,7 @@ static PALMessengerHelper* currentSession = nil;
   return self;
 }
 
-+ (void) init:(SessionCallback) callback {
-  if (!currentSession) {
-    NSLog(@"PALMessengerHelper init");
-    currentSession = [[PALMessengerHelper alloc] initSession];
-  }
-  [currentSession reopen:callback];
-}
-
-- (void) reopen:(SessionCallback) callback {
+- (void) reopen {
   if ([self isOpen]) {
     return;
   }
@@ -54,17 +58,17 @@ static PALMessengerHelper* currentSession = nil;
     self.accessToken = loadedAccessToken;
   }
 
-  [self notifySessionCallback:callback];
-  [self refreshIfNecessary];
+  [self refreshAccessTokenIfNecessary];
 }
 
-- (void) refreshIfNecessary {
-  if (![self needToRefresh]) {
+- (void) refreshAccessTokenIfNecessary {
+  if (![self needToRefreshAccessToken]) {
     return;
   }
 
   NSLog(@"PALMessengerHelper refresh");
-  [[PALSdk messenger] extendAccessToken:^(PALUserAccessToken* userAccessToken, NSError* error) {
+  PALMessengerImpl* messenger = [PALSdk messenger];
+  [messenger extendAccessToken:^(PALUserAccessToken* userAccessToken, NSError* error) {
     if (error) {
       [self close];
       return;
@@ -77,7 +81,7 @@ static PALMessengerHelper* currentSession = nil;
   }];
 }
 
-- (BOOL) needToRefresh {
+- (BOOL) needToRefreshAccessToken {
   long long int expireTime = [self.accessToken expireTime];
   long long int currentTime = (long long) ([[NSDate date] timeIntervalSince1970] * 1000);
   @synchronized (self.lock) {
@@ -87,10 +91,10 @@ static PALMessengerHelper* currentSession = nil;
 
 - (void) open:(SessionCallback) callback {
   if (![self checkUrlScheme]) {
+    [self notifySessionCallback:callback];
     return;
   }
 
-  self.callback = callback;
   if ([self isOpen]) {
     [self notifySessionCallback:callback];
     return;
@@ -100,14 +104,16 @@ static PALMessengerHelper* currentSession = nil;
   NSLog(@"PALMessengerHelper open:%@", connectUrl);
   if (![[UIApplication sharedApplication] canOpenURL:connectUrl]) {
     [self askUserToUpdateOrInstall];
+    [self notifySessionCallback:callback];
     return;
   }
 
+  self.callback = callback;
   [[UIApplication sharedApplication] openURL:connectUrl];
 }
 
 - (BOOL) checkUrlScheme {
-  PALMessenger* messenger = [PALSdk messenger];
+  PALMessengerImpl* messenger = [PALSdk messenger];
   if (!messenger) {
     return NO;
   }
@@ -164,12 +170,14 @@ static PALMessengerHelper* currentSession = nil;
   NSLog(@"PALMessengerHelper finishConnect:%@", accessToken);
   [self updateAccessToken:accessToken];
   [self notifySessionCallback:self.callback];
+  self.callback = nil;
 }
 
 - (void) finishDisconnect {
   NSLog(@"PALMessengerHelper finishDisconnect");
   [self close];
   [self notifySessionCallback:self.callback];
+  self.callback = nil;
 }
 
 - (BOOL) isOpen {
@@ -271,6 +279,6 @@ static PALMessengerHelper* currentSession = nil;
 
   NSLog(@"PALMessengerHelper testInvalidAccessToken");
   [self updateAccessToken:[[PALAccessToken alloc]
-      initWithUid:[self getUid] openApiAppId:[self getOpenApiAppId] accessToken:[self getAccessToken] expireTime:0]];
+      initWithUid:[self getUid] openApiAppId:[self getOpenApiAppId] accessToken:@"BAD" expireTime:0]];
 }
 @end

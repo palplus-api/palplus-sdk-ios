@@ -7,20 +7,25 @@
 #import "UIImage+PAL.h"
 #import "PALConstants.h"
 #import "PALSdk.h"
-#import "PALMessenger.h"
+#import "PALMessengerImpl.h"
 #import "PALMessengerDelegate.h"
 
 @implementation PALUtils
 
++ (NSString*) appKey {
+  PALMessengerImpl* messenger = [PALSdk messenger];
+  return messenger.appKey;
+}
+
 + (NSURL*) connectUrl {
   return [NSURL URLWithString:[NSString stringWithFormat:@"%@://connect?appKey=%@&appUniqueDeviceId=%@", PAL_SDK_SCHEME,
-                                                         [PALSdk messenger].appKey,
+                                                         [self appKey],
                                                          [PALUtils appUniqueDeviceId]]];
 }
 
 + (NSURL*) disconnectUrl:(NSString*) uid {
   return [NSURL URLWithString:[NSString stringWithFormat:@"%@://disconnect?appKey=%@&appUniqueDeviceId=%@&uid=%@", PAL_SDK_SCHEME,
-                                                         [PALSdk messenger].appKey,
+                                                         [self appKey],
                                                          [PALUtils appUniqueDeviceId],
                                                          uid]];
 }
@@ -40,8 +45,7 @@
     return NO;
   }
 
-  if ([[url absoluteString]
-      hasPrefix:[NSString stringWithFormat:@"%@-%@://connect", PAL_SDK_SCHEME, [PALSdk messenger].appKey]]) {
+  if ([[url absoluteString] hasPrefix:[NSString stringWithFormat:@"%@-%@://connect", PAL_SDK_SCHEME, [self appKey]]]) {
     NSDictionary* resultParams = [url pal_decodeParameters];
     PALAccessToken* accessToken = [[PALAccessToken alloc]
         initWithUid:[resultParams pal_stringOf:@"uid"]
@@ -49,19 +53,16 @@
         accessToken:[resultParams pal_stringOf:@"accessToken"]
          expireTime:[resultParams pal_longLongOf:@"expireTime"]];
     if ([accessToken isValid]) {
-      if (![PALMessengerHelper getSession]) {
-        [PALMessengerHelper init:nil];
-      }
-      [[PALMessengerHelper getSession] finishConnect:accessToken];
+      [[PALMessengerHelper sharedInstance] finishConnect:accessToken];
     }
     if ([[PALSdk messenger].delegate respondsToSelector:@selector(pal_messengerDidConnect:)]) {
       [[PALSdk messenger].delegate pal_messengerDidConnect:[PALSdk messenger]];
     }
     return YES;
   } else if ([[url absoluteString]
-      hasPrefix:[NSString stringWithFormat:@"%@-%@://disconnect", PAL_SDK_SCHEME, [PALSdk messenger].appKey]]) {
-    if ([PALMessengerHelper getSession]) {
-      [[PALMessengerHelper getSession] finishDisconnect];
+      hasPrefix:[NSString stringWithFormat:@"%@-%@://disconnect", PAL_SDK_SCHEME, [self appKey]]]) {
+    if ([PALMessengerHelper sharedInstance]) {
+      [[PALMessengerHelper sharedInstance] finishDisconnect];
     }
     if ([[PALSdk messenger].delegate respondsToSelector:@selector(pal_messengerDidDisconnect:)]) {
       [[PALSdk messenger].delegate pal_messengerDidDisconnect:[PALSdk messenger]];
