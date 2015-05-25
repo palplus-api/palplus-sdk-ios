@@ -27,4 +27,6 @@
 
 - (void) sendMessage:(PALMessage*) palMessage to:(NSString*) receiverUid done:(void (^)(NSError* error)) done;
 
+- (UIButton*) connectButton;
+
 @end

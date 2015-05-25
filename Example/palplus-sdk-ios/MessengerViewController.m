@@ -1,7 +1,6 @@
 #import "MessengerViewController.h"
 
 #import "SendMessageViewController.h"
-#import "PALUtils.h"
 #import "PALSdk.h"
 #import "PALMessenger.h"
 
@@ -20,7 +19,7 @@
 
   self.navigationController.navigationBar.topItem.title = @"Demo";
 
-  UIButton* connectButton = [PALUtils connectButton];
+  UIButton* connectButton = [[PALSdk messenger] connectButton];
   [connectButton addTarget:self action:@selector(openPalPlus) forControlEvents:UIControlEventTouchUpInside];
   connectButton.center = self.view.center;
   [self.view addSubview:connectButton];

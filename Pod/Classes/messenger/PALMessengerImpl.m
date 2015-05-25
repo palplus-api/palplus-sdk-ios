@@ -13,6 +13,7 @@
 #import "NSData+PAL.h"
 #import "PALMessengerAccessDeniedError.h"
 #import "PALMessengerDelegate.h"
+#import "PALUtils.h"
 
 static NSString* const AccessTokenHeaderKey = @"X-CUBIE-ACCESS-TOKEN";
 
@@ -108,7 +109,10 @@ static NSString* const AccessTokenHeaderKey = @"X-CUBIE-ACCESS-TOKEN";
     paramsString = [NSString stringWithFormat:@"size=%d", pageSize];
   }
 
-  NSString* url = [NSString stringWithFormat:@"%@%@?%@", [PALMessengerImpl endPoint], @"/v1/api/friend/list", paramsString];
+  NSString* url = [NSString stringWithFormat:@"%@%@?%@",
+                                             [PALMessengerImpl endPoint],
+                                             @"/v1/api/friend/list",
+                                             paramsString];
   __weak PALFriendsResult* preventCircularRef = currentFriendsResult;
   [[PALHttpClient sharedInstance]
       get:url withHeaders:[self accessTokenHeaders] withCallback:^(NSData* responseBody, NSError* error) {
@@ -182,4 +186,9 @@ withCallback:^(NSData* responseBody, NSError* error) {
   }
 }];
 }
+
+- (UIButton*) connectButton {
+  return [PALUtils connectButton];
+}
+
 @end

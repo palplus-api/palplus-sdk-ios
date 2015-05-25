@@ -16,4 +16,6 @@
 
 + (void) setup:(NSString*) appKey;
 
++ (BOOL) handleOpenUrl:(NSURL*) url sourceApplication:(NSString*) sourceApplication;
+
 @end

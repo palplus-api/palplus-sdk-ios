@@ -9,7 +9,6 @@
 #import "PPAppDelegate.h"
 #import "PALSdk.h"
 #import "PPViewController.h"
-#import "PALUtils.h"
 #import "PALMessengerDelegate.h"
 #import "PALMessenger.h"
 
@@ -68,7 +67,7 @@
              openURL:(NSURL*) url
    sourceApplication:(NSString*) sourceApplication
           annotation:(id) annotation {
-  return [PALUtils handleOpenUrl:url sourceApplication:sourceApplication];
+  return [PALSdk handleOpenUrl:url sourceApplication:sourceApplication];
 }
 
 @end

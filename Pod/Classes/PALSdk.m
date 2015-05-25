@@ -8,6 +8,7 @@
 #import "PALTracker.h"
 #import "PALPref.h"
 #import "PALMessengerImpl.h"
+#import "PALUtils.h"
 
 static PALMessengerImpl* messenger = nil;
 
@@ -52,6 +53,10 @@ static PALMessengerImpl* messenger = nil;
   dispatch_async(queue, ^{ // 1
     [[[PALTracker alloc] init] start];
   });
+}
+
++ (BOOL) handleOpenUrl:(NSURL*) url sourceApplication:(NSString*) sourceApplication {
+  return [PALUtils handleOpenUrl:url sourceApplication:sourceApplication];
 }
 
 @end
