@@ -3,7 +3,6 @@
 @class PALMessage;
 @class PALMessageActionParams;
 
-
 @interface PALMessageBuilder : NSObject
 
 + (instancetype) builder;
