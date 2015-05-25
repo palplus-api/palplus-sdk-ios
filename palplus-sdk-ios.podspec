@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "palplus-sdk-ios"
-  s.version          = "0.1.3"
+  s.version          = "0.1.4"
   s.summary          = "Pal+ iOS SDK"
   s.description      = <<-DESC
                        Pal+ iOS SDK enables 3rd party apps to browse a board and post an article to Pal+
